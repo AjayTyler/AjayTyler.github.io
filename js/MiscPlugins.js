@@ -30,7 +30,7 @@
 
 var win = $(window);
 
-var allMods = $(".divCard");
+var allMods = $(".whoosh");
 
 allMods.each(function(i, el) {
   var el = $(el);
