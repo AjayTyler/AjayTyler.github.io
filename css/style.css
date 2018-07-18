@@ -2,3 +2,16 @@
   color: #0071d1;
   font-size: 3em;
 }
+
+.tabcontent {
+    animation: fadeEffect 1s;
+}
+
+.modal {
+    animation: fadeEffect 0.25s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
