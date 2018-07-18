@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <script type="text/javascript">
+            dataLayer = [{
+                'pageCategory': 'Product Page',
+            }];
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M2348X4');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="utf-8">
+        <title>Express Espresso | GCW CS1-110</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/ico" href="images/favicon.ico" sizes="16x16">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script defer src="js/app.js"></script>
+
+        <link async rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+
+        <script type="text/javascript">
+            function selectTab(evt, tabName) {
+              var i, tabcontent, tablink;
+              tabcontent = document.getElementsByClassName('tabcontent');
+
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = 'none';
+              }
+
+              tablink = document.getElementsByClassName('tablink');
+
+              for (i = 0; i < tablink.length; i++) {
+                tablink[i].className = tablink[i].className.replace(' is-active', '');
+              }
+
+              document.getElementById(tabName).style.display = 'block';
+              evt.currentTarget.parentElement.className += ' is-active';
+            }
+        </script>
+    </head>
+    <body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRTH73N"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
+        <div id="app">
+        <nav class="navbar is-dark">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item brand-text" href="#">
+                        <strong>Express Espresso</strong>
+                    </a>
+                    <div class="navbar-burger burger" data-target="navMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div id="navMenu" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="#">Bezzera</a>
+                        <a class="navbar-item is-active" href="#">Grindmaster-Cecilware</a>
+                        <a class="navbar-item" href="#">La Pavoni</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero has-text-centered">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">
+                        {{ productTitle }}
+                        <!-- Classic Series Espresso Machine -->
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <figure class="image is-square">
+                            <img src="images/V-GRICS1-110.jpg" alt="Grindmaster-Cecilware CS1-110">
+                        </figure>
+                    </div>
+                </div>
+                <div class="level">
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">MPN</p>
+                            <p class="title">CS1-110</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Heads</p>
+                            <p class="title">1</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Boiler</p>
+                            <p class="title">1.5 Gal.</p>
+                        </div>
+                    </div>
+                    <div class="level-item has-text-centered">
+                        <div>
+                            <p class="heading">Dimensions</p>
+                            <p class="title">25&quot; x 19&quot; x 20<sup>&frac12;</sup>&quot;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="level">
+                <div class="level-item has-text-centered">
+                    <div class="columns">
+                        <div class="column">
+                            <p class="is-size-3 has-text-link has-text-weight-semibold">{{ displayPrice }}</p>
+                        </div>
+                        <div class="column">
+                            <div class="select is-medium">
+                                <select name="" id="" v-model="qty">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <a class="button is-medium is-link" onclick="addRemove = 'add'; dataLayer.push(productData);">Add to Cart</a>
+                        </div>
+                        <div class="column">
+                            <a class="button is-medium is-link has-text-centered is-outlined" title="Add to Wishlist" id="wishlist">
+                                <i class="fas fa-clipboard-list is-size-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half is-offset-one-quarter">
+                        <div class="tabs is-centered">
+                            <ul>
+                                <li class="tablink is-active">
+                                    <a class="is-size-5" onclick="selectTab(event, 'description')">Description</a>
+                                </li>
+                                <li class="tablink">
+                                    <a class="is-size-5" onclick="selectTab(event, 'specs')">Specs</a>
+                                </li>
+                                <li class="tablink">
+                                    <a class="is-size-5" onclick="selectTab(event, 'shipping')">Shipping</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="content is-size-5 tabcontent" id="description">
+                            <p>
+                                Constructed with stainless steel, this espresso machine provides
+                                the perfect combination of modern innovation and durable craftsmanship.
+                            </p>
+                            <p>
+                                The CS1-110 features a raised group head that accommodates virtually
+                                any size of cup. Large mugs for stay-in guests and tall cups for to-go order
+                                customers fit comfortably on this machine. This allows it to make use
+                                of existing drinkware, rather than requiring a new smallware investment.
+                            </p>
+                            <p>
+                                This espresso machine's elegant curved front and diamond black sides give it
+                                a chic style that blends perfectly with caf&eacute;s, coffee parlors, and
+                                roastery storefronts.
+                            </p>
+                        </div>
+                        <div class="content is-size-5 tabcontent" id="specs" style="display: none;">
+                            <table class="table is-striped is-hoverable">
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Boiler Capacity</strong></td>
+                                        <td>1.5 gallons</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Boiler Construction</strong></td>
+                                        <td>Stainless Steel</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Certifications</strong></td>
+                                        <td>NSF<sup>&reg;</sup>, cETLus</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Dimensions</strong></td>
+                                        <td>25&quot; w. x 19&quot; d. x 20.5&quot; h.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Electrical</strong></td>
+                                        <td>120v / 60 htz / 1 phase / 18 amps</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Group Head(s)</strong></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Specsheet</strong></td>
+                                        <td>
+                                            <a>
+                                                <span class="icon">
+                                                    <i class="fas fa-file-download"></i>
+                                                </span>
+                                                Download
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="content is-size-5 tabcontent" id="shipping" style="display: none;">
+                            <div class="columns">
+                                <div class="column is-3 is-offset-one-quarter">
+                                    <p><strong>ZIP Code</strong></p>
+                                </div>
+                                <div class="column is-3">
+                                    <input type="text" class="input" v-model="zipCode">
+                                </div>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-3 is-offset-one-quarter">
+                                    <p><strong>Est. Cost</strong></p>
+                                </div>
+                                <div class="column is-3">
+                                    <input type="text" class="input" v-model="estShipCost" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="level">
+                    <div class="level-item">
+                        <p class="title">Other Models</p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="images/V-GRICS1-220.jpg" alt="Grindmaster-Cecilware CS1-220">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="images/V-GRICS2-220.jpg" alt="Grindmaster-Cecilware CS2-220">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="images/V-GRICS3-220.jpg" alt="Grindmaster-Cecilware CS3-220">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+          <nav class="breadcrumb">
+            <ul>
+              <li><a href="index.html">< Back to R&eacute;sum&eacute;</a></li>
+            </ul>
+          </nav>
+        </div>
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    Brewed with panache every morning &copy;&nbsp;20XX <strong>Express Espresso</strong>, ironic rights reserved.
+                </p>
+            </div>
+        </footer>
+        </div>
+    </body>
+</html>

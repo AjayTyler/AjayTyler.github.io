@@ -3,22 +3,11 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-M2348X4');
-  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M2348X4');</script>
   <!-- End Google Tag Manager -->
 
   <meta charset="utf-8">
@@ -27,36 +16,210 @@
   <title>A.J. Ellis - Portfolio</title>
 
   <!-- Bulma Resources-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script defer src="js/page.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2348X4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2348X4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+<div id="app">
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title" style="color: white;">A.J. Ellis</h1>
+        <h2 class="subtitle" style="color: white;">Data Analyst | Digital Marketer</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <section-title>
+      Summary
+    </section-title>
+    <br>
+    <div class="container">
+      <p>I am an analyst who specializes in making life easier for other people.
+        Whether it’s translating jargon from a marketing platform into ordinary
+        words, or analyzing data from multiple sources to answer complex questions,
+        I make sure that the end result is clear, useful, and actionable. For the
+        past 5 years, I’ve used my data science tricks to turn raw data into useful
+        insights.</p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
+      <h1 class="title">Portfolio</h1>
+    </div>
+    <br>
+    <div class="container">
       <div class="columns">
-        <div class="column is-4 is-offset-4">
-          <div class="card">
-            <div class="card-content">
-              <p class="title">
-                Be back after a bit!
-              </p>
-              <div class="content">
-                This page needs an update. I'm taking a long time to figure out what I want to put here.
-              </div>
-              <p class="subtitle">
-                :)
-              </p>
-            </div>
+        <p-artifact type="Tableau">
+          <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" title="Top Categories / Data Explorer">
+            <figure class="figure is-2by1">
+              <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
+            </figure>
+          </a>
+        </p-artifact>
+        <p-artifact>
+          <a href="landing-page-concept.html" title="Landing Page Concept">
+            <figure class="figure is-2by1">
+              <img src="images/landing-page-concept.png" alt="Landing Page Concept">
+            </figure>
+          </a>
+        </p-artifact>
+      </div>
+
+      <div class="columns">
+          <p-artifact>
+            <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" title="Schema Project Proposal">
+              <figure class="figure is-2by1">
+                <img src="images/schema-project.png" alt="Schema Project Proposal">
+              </figure>
+            </a>
+          </p-artifact>
+          <p-artifact>
+            <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" title="SEO Audit">
+              <figure class="figure is-2by1">
+                <img src="images/seo-audit.png" alt="SEO Audit">
+              </figure>
+            </a>
+          </p-artifact>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Work Experience</h1>
+    </div>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Digital Marketing Strategist (<em>Sep 2016 &ndash; Present</em>)</p>
+          <p class="subtitle is-6">Ace Mart Restaurant Supply</p>
+          <div class="content">
+            <ul>
+              <li>While performing year-over-year sales analysis, discovered that an apparent
+                5% loss was actually a 10% gain, after filtering out inconsistent data</li>
+              <li>Managed relationship with ad agency to grow median return on ad spend by 64%</li>
+              <li>Built Tableau sales trends dashboard that saved 36+ hours of manual calculations</li>
+              <li>Embedded SQL query in weekly Excel dashboard to streamline data refresh</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Institutional Research Officer (<em>Jun 2013 &ndash; May 2016</em>)</p>
+          <p class="subtitle is-6">Central Christian College of Kansas</p>
+          <div class="content">
+            <ul>
+              <li>Assisted IT dept. by building SQL reports to provide data to Academic Office</li>
+              <li>Compiled 300+ ad hoc data analyses as requested by faculty/staff</li>
+              <li>Performed cross-analysis of majors to identify patterns with high retention</li>
+              <li>Cleaned dirty data in student records to increase reporting accuracy</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Education</h1>
+    </div>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Digital Creative Institute (<em>Aug 2016 &ndash; Aug 2017)</em></p>
+          <p class="subtitle is-6">Digital Marketing Apprenticeship</p>
+          <p>Achieved Status of Program Fellow.</p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Central Christian College of Kansas (<em>Aug 2009 &ndash; May 2013)</em></p>
+          <p class="subtitle is-6">Bachelor of Science</p>
+          <p>Graduated Suma Cum Laude</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Skills</h1>
+    </div>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Personal</p>
+          <p class="subtitle is-6">Teamwork, Communication, Critical Thinking</p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">Technical</p>
+          <p class="subtitle is-6">Tableau, Excel, Python, SQL, HTML/CSS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Certifications</h1>
+      <br>
+      <div class="container">
+        <div class="card">
+          <div class="card-content">
+            <p class="title is-5">Tableau Desktop Qualified Associate</p>
+            <p class="subtitle is-6">Aug 2017 - Aug 2019</p>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <div class="card-content">
+            <p class="title is-5">Google Analytics Individual Qualification</p>
+            <p class="subtitle is-6">Apr 2018 - Oct 2019</p>
+          </div>
+        </div>
+        <br>
+        <div class="card">
+          <div class="card-content">
+            <p class="title is-5">Google AdWords (All)</p>
+            <p class="subtitle is-6">Apr 2018 - Apr 2019</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered my_social">
+        <a href="https://www.linkedin.com/in/ajayellis/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://plus.google.com/u/0/+AJEllis-Data_Guy"><i class="fab fa-google-plus"></i></a>
+        <a href="https://www.facebook.com/ajtellis"><i class="fab fa-facebook-square"></i></a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
