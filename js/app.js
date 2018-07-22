@@ -20,6 +20,15 @@ var app = new Vue({
       } else {
         return '$' + (this.prodPrice * this.qty).toLocaleString('en-US') + '.00'
       }
+    },
+    showForIe: function() {
+      if (navigator.appName == 'Microsoft Internet Explorer'
+      ||  !!(navigator.userAgent.match(/Trident/)
+      || navigator.userAgent.match(/rv:11/))) {
+        return true;
+      } else {
+        return false;
+      }
     }
   }
 });

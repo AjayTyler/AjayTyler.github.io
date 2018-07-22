@@ -116,7 +116,7 @@
                 </div>
             </div>
         </section>
-        <div class="container">
+        <div class="container" v-if="showForIe == false">
             <div class="level">
                 <div class="level-item has-text-centered">
                     <div class="columns">
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <div class="column">
-                            <a class="button is-medium is-link" onclick="addRemove = 'add'; dataLayer.push(productData);">Add to Cart</a>
+                            <a class="button is-medium is-link">Add to Cart</a>
                         </div>
                         <div class="column">
                             <a class="button is-medium is-link has-text-centered is-outlined" title="Add to Wishlist" id="wishlist">
@@ -145,6 +145,26 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container" v-if="showForIe == true">
+          <div class="level">
+            <div class="level-item has-text-centered">
+              <p class="is-size-3 has-text-link has-text-weight-semibold">{{ displayPrice }}</p>&nbsp;
+              <div class="select is-medium">
+                <select name="" id="" v-model="qty">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>&nbsp;
+              <a class="button is-medium is-link">Add to Cart</a>&nbsp;
+              <a class="button is-medium is-link has-text-centered is-outlined" title="Add to Wishlist" id="wishlist">
+                <i class="fas fa-clipboard-list is-size-3"></i>
+              </a>
+            </div>
+          </div>
         </div>
         <section class="section">
             <div class="container">

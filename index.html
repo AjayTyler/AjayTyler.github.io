@@ -59,39 +59,355 @@
         Portfolio
     </section-title>
     <br>
-    <div class="container">
+    <div class="container" v-if="showForIe == true">
       <div class="columns">
-        <p-artifact type="Tableau">
-          <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" title="Top Categories / Data Explorer">
-            <figure class="figure is-2by1">
-              <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
-            </figure>
+        <div class="column">
+          <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
+            <p-artifact>
+              <figure class="figure is-2by1">
+                <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
+              </figure>
+            </p-artifact>
           </a>
-        </p-artifact>
-        <p-artifact>
-          <a href="landing-page-concept.html" title="Landing Page Concept">
-            <figure class="figure is-2by1">
-              <img src="images/landing-page-concept.png" alt="Landing Page Concept">
-            </figure>
-          </a>
-        </p-artifact>
-      </div>
-
-      <div class="columns">
+        </div>
+        <div class="column">
           <p-artifact>
-            <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" title="Schema Project Proposal">
+            <a href="landing-page-concept.html" target="_self">
+              <figure class="figure is-2by1">
+                <img src="images/landing-page-concept.png" alt="Landing Page Concept">
+              </figure>
+            </a>
+          </p-artifact>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <p-artifact>
+            <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
               <figure class="figure is-2by1">
                 <img src="images/schema-project.png" alt="Schema Project Proposal">
               </figure>
             </a>
           </p-artifact>
+        </div>
+        <div class="column">
           <p-artifact>
-            <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" title="SEO Audit">
+            <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
               <figure class="figure is-2by1">
                 <img src="images/seo-audit.png" alt="SEO Audit">
               </figure>
             </a>
           </p-artifact>
+        </div>
+      </div>
+    </div>
+    <div class="container" v-if="showForIe == false">
+      <div class="columns">
+        <!-- Begin Artifact -->
+        <p-artifact type="Tableau">
+          <a @click="toggleActive('tableauModal');">
+            <figure class="figure is-2by1">
+              <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
+            </figure>
+          </a>
+        </p-artifact>
+        <div class="modal" v-bind:class="{ 'is-active': tableauModal }">
+          <div class="modal-background" @click="toggleActive('tableauModal');"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Context</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="columns">
+                <div class="column">
+                  <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
+                    <figure class="image is-2by1">
+                      <img src="images/tableau-dashboard.png" alt="See the dashboard in action">
+                    </figure>
+                  </a>
+                  <small>Click Image to View Dashboard</small>
+                </div>
+                <div class="column">
+                  <p class="is-size-5">Problem</p>
+                  <p>Our promotion coordinator needed to know what items sold best,
+                    and when. My job was to compile sales data into a format that
+                    she could use. However, the task was both <strong>time-consuming</strong>
+                    and <strong>inefficient</strong>.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Solution</p>
+                  <p>Because our promotion coordinator needed to merge sales data with
+                    other information, she needed the ability to not just view
+                    a list of recommendations, but to explore further. What we needed
+                    was something that was not static but interactive. <strong>We needed a tool,
+                    not just a spreadsheet</strong>. What we needed was Tableau.</p>
+                  <br>
+                  <p>Before switching to Tableau, I would easily spend 3-4 hours just
+                    compiling the data and then formatting in an Excel workbook. Follow-up
+                    requests for clarifications or additional data could add another hour
+                    hours of work, depending on the level of detail required. <strong>Tableau
+                    took the tedium out of the task</strong>. After switching, all I had to
+                    do was refresh the data and export the workbook to a network location
+                    for pickup.</p>
+                  <br>
+                  <p>The dashboard also enabled deeper analysis. Its interactivity and advanced charting features
+                    made it possible to display year-over-year trends in a meaningful way.
+                    Packaging related data in the same workbook also became easier,
+                    enabling us to display and analyze the terms that people use
+                    to search our website.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Resolution</p>
+                    <p>All said and done, <strong>one Tableau dashboard saved us 36+ hours
+                      per year</strong> by simplifying this one task. Aside from providing
+                      benefits to my own team, personnel in other departments expressed an
+                      interest in the dashboard and began to use it for their own analyses.</p>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts"
+              class="button is-link"
+              target="_blank">View Dashboard</a>
+              <button class="button" @click="toggleActive('tableauModal');">Close</button>
+            </footer>
+          </div>
+        </div>
+        <!-- End Artifact  -->
+
+        <!-- Begin Artifact -->
+        <p-artifact>
+          <a @click="toggleActive('landingPageModal');">
+            <figure class="figure is-2by1">
+              <img src="images/landing-page-concept.png" alt="Landing Page Concept">
+            </figure>
+          </a>
+        </p-artifact>
+        <div class="modal" v-bind:class="{ 'is-active': landingPageModal }">
+          <div class="modal-background" @click="toggleActive('landingPageModal');"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Context</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="columns">
+                <div class="column">
+                  <a href="landing-page-concept.html" target="_self">
+                    <figure class="image is-2by1">
+                      <img src="images/landing-page-concept.png" alt="See the full landing page design">
+                    </figure>
+                  </a>
+                  <small>Click Image to View Landing Page</small>
+                </div>
+                <div class="column">
+                  <p class="is-size-5">Problem</p>
+                  <p>The Company had built several Wordpress websites for its
+                    house brand products. However, the products pages were <strong>functional,
+                    but not beautiful</strong>. Images were good, but the content was
+                    not optimized to impress viewers.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Solution</p>
+                  <p>The <strong>original pages had some good points</strong> going for them: they had
+                    few elements to distract the viewier, images were high-quality,
+                    and they had a tight focus on the information that they provided.</p>
+                  <br>
+                  <p><strong>I took these strengths and made them stronger</strong>. I changed
+                    the layout of the page's content to a more vertical flow. This made
+                    the image more prominant, and also made it easier for users to scroll
+                    through discrete pieces of information.</p>
+                  <br>
+                  <p>Because I wanted to the design to potentially find use on the Company's
+                    primary website as a focused landing page, I also <strong>added some
+                    ecommerce elements</strong>.</p>
+                </div>
+              </div>
+              <div class="modal" v-bind:class="{ 'is-active': oldDesignPreview }">
+                <div class="modal-background sub-modal" @click="toggleActive('oldDesignPreview')"></div>
+                <div class="modal-content">
+                  <img src="images/gusto-vert-full.png" alt="Old Landing Page Design" @click="toggleActive('oldDesignPreview')">
+                </div>
+              </div>
+              <div class="modal" v-bind:class="{ 'is-active': newDesignPreview }">
+                <div class="modal-background sub-modal" @click="toggleActive('newDesignPreview')"></div>
+                <div class="modal-content">
+                  <img src="images/elp-vert-full.png" alt="New Landing Page Design" @click="toggleActive('newDesignPreview')">
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <small><em>Original Design</em></small>
+                  <a @click="toggleActive('oldDesignPreview')">
+                    <img src="images/gusto-vert.png" alt="Old Landing Page Design">
+                  </a>
+                </div>
+                <div class="column">
+                  <small><em>New Design</em></small>
+                  <a @click="toggleActive('newDesignPreview')">
+                    <img src="images/elp-vert.png" alt="Espresso Landing Page">
+                  </a>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Resolution</p>
+                  <p>This was a very recent project, and is currently <strong>pending administrative review</strong>.
+                    However, it was <strong>well-received by the Company's marketing team</strong>. It will most likely
+                    find use on the subsidiary websites as a proof-of concept before
+                    being applied to the Company's current website.</p>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-link">View Page</button>
+              <button class="button" @click="toggleActive('landingPageModal');">Close</button>
+            </footer>
+          </div>
+        </div>
+        <!-- End Artifact -->
+      </div>
+
+      <div class="columns">
+
+        <!-- Begin Artifact -->
+        <p-artifact>
+          <a @click="toggleActive('schemaModal')">
+            <figure class="figure is-2by1">
+              <img src="images/schema-project.png" alt="Schema Project Proposal">
+            </figure>
+          </a>
+        </p-artifact>
+        <div class="modal" v-bind:class="{ 'is-active': schemaModal }">
+          <div class="modal-background" @click="toggleActive('schemaModal');"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Context</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="columns">
+                <div class="column">
+                  <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
+                    <figure class="image is-2by1">
+                      <img src="images/schema-project.png" alt="View the Schema project proposal">
+                    </figure>
+                  </a>
+                  <small>Click Image to View Proposal</small>
+                </div>
+                <div class="column">
+                  <p class="is-size-5">Problem</p>
+                  <p>I identified several optimizations in the course of my SEO audit.
+                    Repairing broken Schema was one of those. However, <strong>the dev team
+                    manager needed more details</strong> to verify whether the value would offset
+                    the cost.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Solution</p>
+                  <p>The Schema portion of the SEO audit that I performed only summarized
+                    the benefits of optimization. Because a non-trivial amount of labor could
+                    potentially be involved, <strong>I needed to estimate the potential sales lift</strong>
+                    that this task could have.</p>
+                  <br>
+                  <p>Because Schema would have a direct impact on our search results, estimating
+                    an increased click-through rate (CTR) seemed like the best method. Using search
+                    queries pulled from Google Search Console and Google Analytics, I calculated the traffic that
+                    would result from an increased CTR and applied per-session revenue to get
+                    the value of the optimization.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Resolution</p>
+                    <p>Using the performance of a few of our strongest keywords as a base, I estimated
+                      that repairing our <strong>Schema could lift monthly sales 10% &ndash; 30%</strong>.
+                      This satisfied the request for more detail, and the included implementation steps
+                      were deemed sufficient.</p>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" title="Schema Project Proposal"
+              class="button is-link"
+              target="_blank">View Proposal</a>
+              <button class="button" @click="toggleActive('schemaModal');">Close</button>
+            </footer>
+          </div>
+        </div>
+        <!-- End Artifact -->
+
+        <!-- Begin Artifact -->
+        <p-artifact>
+          <a @click="toggleActive('seoModal')">
+            <figure class="figure is-2by1">
+              <img src="images/seo-audit.png" alt="SEO Audit">
+            </figure>
+          </a>
+        </p-artifact>
+        <div class="modal" v-bind:class="{ 'is-active': seoModal }">
+          <div class="modal-background" @click="toggleActive('seoModal');"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Context</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="columns">
+                <div class="column">
+                  <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
+                    <figure class="image is-2by1">
+                      <img src="images/seo-audit.png" alt="View the Schema project proposal">
+                    </figure>
+                  </a>
+                  <small>Click Image to View Audit</small>
+                </div>
+                <div class="column">
+                  <p class="is-size-5">Problem</p>
+                  <p>Prior to my arrival, <strong>The Company had never conducted an SEO audit</strong>.
+                    This made it difficult to measure progress, identify opportunities, and
+                    gain insight into the Company's web traffic.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Solution</p>
+                  <p>The only way to rank well in search engine results these days is to retain
+                    strength across many areas of web design. This includes business listings,
+                    technical optimizations, and backlinks. Therefore, <strong>an SEO audit would need to
+                    be comprehensive</strong> to provide any lasting value.</p>
+                  <br>
+                  <p>Using metrics provided by various Google resources, as well as the Company's internal data,
+                    <strong>I benchmarked the Company's performance</strong> using KPIs that Google
+                    lists as ranking factors <strong>and calculated the value of optimizations</strong>
+                    that the Company could implement.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5">Resolution</p>
+                    <p>Estimating the value of SEO for the Company was a nuanced process. In the end,
+                      I opted to use conservative estimates that excluded phone/email transactions.
+                      In this model, <strong>optimizations were worth approximately $169k annually</strong>.
+                      Because many of were rather technical, they were broken
+                      out into their own projects to make implementation more managable.</p>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" title="SEO Audit"
+              class="button is-link"
+              target="_blank">View Audit</a>
+              <button class="button" @click="toggleActive('seoModal');">Close</button>
+            </footer>
+          </div>
+        </div>
+        <!-- End Artifact -->
+
       </div>
     </div>
   </section>
@@ -161,6 +477,38 @@
 
   <section class="section">
     <section-title>
+      Certifications
+    </section-title>
+      <br>
+      <div class="container">
+        <certification>
+          <template slot="image">
+            <img src="images/tableau-logo.png" alt="Tableau Logo">
+          </template>
+          <p class="title is-5">Tableau Desktop Qualified Associate</p>
+          <p class="subtitle is-6">Aug 2017 - Aug 2019</p>
+        </certification>
+        <br>
+        <certification>
+          <template slot="image">
+            <img src="images/ga-logo.png" alt="Google Analytics Logo">
+          </template>
+          <p class="title is-5">Google Analytics Individual Qualification</p>
+          <p class="subtitle is-6">Apr 2018 - Oct 2019</p>
+        </certification>
+        <br>
+        <certification>
+          <template slot="image">
+            <img src="images/adwords-logo.png" alt="AdWords Logo">
+          </template>
+          <p class="title is-5">Google AdWords (All)</p>
+          <p class="subtitle is-6">Apr 2018 - Apr 2019</p>
+        </certification>
+      </div>
+  </section>
+
+  <section class="section">
+    <section-title>
       Skills
     </section-title>
     <br>
@@ -181,74 +529,12 @@
     </div>
   </section>
 
-  <section class="section">
-    <section-title>
-      Certifications
-    </section-title>
-      <br>
-      <div class="container">
-        <div class="card">
-          <div class="card-content">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <figure class="image is-96x96">
-                    <img src="images/tableau-logo.png" alt="Tableau Logo">
-                  </figure>
-                </div>
-                <div class="container">
-                  <p class="title is-5">Tableau Desktop Qualified Associate</p>
-                  <p class="subtitle is-6">Aug 2017 - Aug 2019</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-content">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <figure class="image is-96x96">
-                    <img src="images/ga-logo.png" alt="Google Analytics Logo">
-                  </figure>
-                </div>
-                <div class="container">
-                  <p class="title is-5">Google Analytics Individual Qualification</p>
-                  <p class="subtitle is-6">Apr 2018 - Oct 2019</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br>
-        <div class="card">
-          <div class="card-content">
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <figure class="image is-96x96">
-                    <img src="images/adwords-logo.png" alt="AdWords Logo">
-                  </figure>
-                </div>
-                <div class="container">
-                  <p class="title is-5">Google AdWords (All)</p>
-                  <p class="subtitle is-6">Apr 2018 - Apr 2019</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-  </section>
+  </div>
 
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered my_social">
         <a href="https://www.linkedin.com/in/ajayellis/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://plus.google.com/u/0/+AJEllis-Data_Guy"><i class="fab fa-google-plus"></i></a>
         <a href="https://www.facebook.com/ajtellis"><i class="fab fa-facebook-square"></i></a>
       </div>
     </div>
