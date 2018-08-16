@@ -15,7 +15,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>A.J. Ellis - Portfolio</title>
 
-  <!-- Bulma Resources-->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -29,7 +28,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2348X4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-<div id="app">
+  <div id="app">
   <section class="hero is-dark">
     <div class="hero-body">
       <div class="container">
@@ -48,9 +47,10 @@
       <p>I am an analyst who specializes in making life easier for other people.
         Whether it’s translating jargon from a marketing platform into ordinary
         words, or analyzing data from multiple sources to answer complex questions,
-        I make sure that the end result is clear, useful, and actionable. For the
-        past 5 years, I’ve used my data science tricks to turn raw data into useful
-        insights.</p>
+        I make sure that the end result is clear, useful, and actionable.<br><br>
+
+        For the past 5 years, I’ve used my data science skills to transform raw data
+        into useful insights.</p>
     </div>
   </section>
 
@@ -62,14 +62,14 @@
     <div class="container" v-if="showForIe == true">
       <div class="columns">
         <p-artifact>
-          <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
+          <a class="artifact-redirect" href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
             <figure class="figure is-2by1">
               <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
             </figure>
           </a>
         </p-artifact>
         <p-artifact>
-          <a href="landing-page-concept.html" target="_self">
+          <a class="artifact-redirect" href="landing-page-concept.html" target="_self">
             <figure class="figure is-2by1">
               <img src="images/landing-page-concept.png" alt="Landing Page Concept">
             </figure>
@@ -78,14 +78,14 @@
       </div>
       <div class="columns">
         <p-artifact>
-          <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
+          <a class="artifact-redirect" href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
             <figure class="figure is-2by1">
               <img src="images/schema-project.png" alt="Schema Project Proposal">
             </figure>
           </a>
         </p-artifact>
         <p-artifact>
-          <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
+          <a class="artifact-redirect" href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
             <figure class="figure is-2by1">
               <img src="images/seo-audit.png" alt="SEO Audit">
             </figure>
@@ -112,7 +112,7 @@
             <section class="modal-card-body">
               <div class="columns">
                 <div class="column">
-                  <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
+                  <a class="artifact-redirect" href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
                     <figure class="image is-2by1">
                       <img src="images/tableau-dashboard.png" alt="See the dashboard in action">
                     </figure>
@@ -163,7 +163,7 @@
             </section>
             <footer class="modal-card-foot">
               <a href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts"
-              class="button is-link"
+              class="button is-link artifact-redirect"
               target="_blank">View Dashboard</a>
               <button class="button" @click="toggleActive('tableauModal');">Close</button>
             </footer>
@@ -188,7 +188,7 @@
             <section class="modal-card-body">
               <div class="columns">
                 <div class="column">
-                  <a href="landing-page-concept.html" target="_self">
+                  <a class="artifact-redirect" href="landing-page-concept.html" target="_self">
                     <figure class="image is-2by1">
                       <img src="images/landing-page-concept.png" alt="See the full landing page design">
                     </figure>
@@ -260,7 +260,7 @@
               <a href="landing-page-concept.html"
               tite="Landing Page Concept"
               target="_self"
-              class="button is-link">View Page</a>
+              class="button is-link artifact-redirect">View Page</a>
               <button class="button" @click="toggleActive('landingPageModal');">Close</button>
             </footer>
           </div>
@@ -287,7 +287,7 @@
             <section class="modal-card-body">
               <div class="columns">
                 <div class="column">
-                  <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
+                  <a class="artifact-redirect" href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
                     <figure class="image is-2by1">
                       <img src="images/schema-project.png" alt="View the Schema project proposal">
                     </figure>
@@ -329,7 +329,7 @@
             </section>
             <footer class="modal-card-foot">
               <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" title="Schema Project Proposal"
-              class="button is-link"
+              class="button is-link artifact-redirect"
               target="_blank">View Proposal</a>
               <button class="button" @click="toggleActive('schemaModal');">Close</button>
             </footer>
@@ -354,7 +354,7 @@
             <section class="modal-card-body">
               <div class="columns">
                 <div class="column">
-                  <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
+                  <a class="artifact-redirect" href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" target="_blank">
                     <figure class="image is-2by1">
                       <img src="images/seo-audit.png" alt="View the Schema project proposal">
                     </figure>
@@ -395,7 +395,7 @@
             </section>
             <footer class="modal-card-foot">
               <a href="https://docs.google.com/presentation/d/1nMzV_iMBJODp01jJqq1JEsv_n9b60fvTfOBFBJIF12E/edit?usp=sharing" title="SEO Audit"
-              class="button is-link"
+              class="button is-link artifact-redirect"
               target="_blank">View Audit</a>
               <button class="button" @click="toggleActive('seoModal');">Close</button>
             </footer>
@@ -529,8 +529,12 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered my_social">
-        <a href="https://www.linkedin.com/in/ajayellis/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/ajtellis"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.linkedin.com/in/ajayellis/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/ajtellis">
+          <i class="fab fa-facebook-square"></i>
+        </a>
       </div>
     </div>
   </footer>
