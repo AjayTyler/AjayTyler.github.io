@@ -47,7 +47,9 @@
       <p>I am an analyst who specializes in making life easier for other people.
         Whether it’s translating jargon from a marketing platform into ordinary
         words, or analyzing data from multiple sources to answer complex questions,
-        I make sure that the end result is clear, useful, and actionable.<br><br>
+        I make sure that the end result is clear, useful, and actionable. I anticipate 
+        needs and collaborate with stakeholders to produce answers to questions
+        that haven't been asked yet.<br><br>
 
         For the past 5 years, I’ve used my data science skills to transform raw data
         into useful insights.</p>
@@ -93,6 +95,7 @@
         </p-artifact>
       </div>
     </div>
+
     <div class="container" v-if="showForIe == false">
       <div class="columns">
         <!-- Begin Artifact -->
@@ -436,7 +439,7 @@
           <div class="content">
             <ul>
               <li>Assisted IT dept. by building SQL reports to provide data to Academic Office</li>
-              <li>Compiled 300+ ad hoc data analyses as requested by faculty/staff</li>
+              <li>Compiled 300+ ad hoc data requests from faculty/staff</li>
               <li>Performed cross-analysis of majors to identify patterns with high retention</li>
               <li>Cleaned dirty data in student records to increase reporting accuracy</li>
             </ul>
@@ -452,21 +455,37 @@
     </section-title>
     <br>
     <div class="container">
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-content">
           <p class="title is-5">Digital Creative Institute (<em>Aug 2016 &ndash; Aug 2017)</em></p>
           <p class="subtitle is-6">Digital Marketing Apprenticeship</p>
           <p>Achieved Status of Program Fellow.</p>
         </div>
-      </div>
+      </div> -->
+      <certification>
+        <template slot="image">
+          <img src="images/dci-logo.jpg" alt="Digital Creative Institute">
+        </template>
+        <p class="title is-5">Digital Creative Institute (<em>Aug 2016 &ndash; Aug 2017)</em></p>
+        <p class="subtitle is-6">Digital Marketing Apprenticeship</p>
+        <p>Achieved Status of Program Fellow.</p>
+      </certification>
       <br>
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-content">
           <p class="title is-5">Central Christian College of Kansas (<em>Aug 2009 &ndash; May 2013)</em></p>
           <p class="subtitle is-6">Bachelor of Science</p>
           <p>Graduated Suma Cum Laude</p>
         </div>
-      </div>
+      </div> -->
+      <certification>
+        <template slot="image">
+          <img src="images/ccck-logo.jpg" alt="Digital Creative Institute">
+        </template>
+        <p class="title is-5">Central Christian College of Kansas (<em>Aug 2009 &ndash; May 2013)</em></p>
+        <p class="subtitle is-6">Bachelor of Science</p>
+        <p>Graduated Suma Cum Laude</p>
+      </certification>
     </div>
   </section>
 
