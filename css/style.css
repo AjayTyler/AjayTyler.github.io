@@ -19,3 +19,7 @@
 .modal-background.sub-modal {
   cursor: pointer;
 }
+
+.text-focus {
+    font-weight: 500;
+}
