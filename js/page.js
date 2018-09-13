@@ -45,7 +45,8 @@ vm = new Vue({
     oldDesignPreview: false,
     newDesignPreview: false,
     schemaModal: false,
-    seoModal: false
+    seoModal: false,
+    shippingModal: false
   },
   methods: {
     toggleActive: function(target) {

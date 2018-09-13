@@ -64,25 +64,25 @@
     <div class="container" v-if="showForIe == true">
       <div class="columns">
         <p-artifact>
+          <a class="artifact-redirect" href="https://docs.google.com/presentation/d/1i_fYksRIEhKYNlFmwqrbF-QI5Sj5RRHU8ZV3fxAIlvo/edit?usp=sharing" target="_blank">
+            <figure class="figure is-2by1">
+              <img src="images/shipping-estimator.png" alt="Shipping Estimator">
+            </figure>
+          </a>
+        </p-artifact>
+        <p-artifact>
           <a class="artifact-redirect" href="https://public.tableau.com/profile/aj.ellis#!/vizhome/TopCategoriesProducts-Simplified/TopCategoriesProducts" target="_blank">
             <figure class="figure is-2by1">
               <img src="images/tableau-dashboard.png" alt="Top Categories / Data Explorer Tableau Dashboard">
             </figure>
           </a>
         </p-artifact>
-        <p-artifact>
-          <a class="artifact-redirect" href="landing-page-concept.html" target="_self">
-            <figure class="figure is-2by1">
-              <img src="images/landing-page-concept.png" alt="Landing Page Concept">
-            </figure>
-          </a>
-        </p-artifact>
       </div>
       <div class="columns">
         <p-artifact>
-          <a class="artifact-redirect" href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
+          <a class="artifact-redirect" href="/landing-page-concept" target="_self">
             <figure class="figure is-2by1">
-              <img src="images/schema-project.png" alt="Schema Project Proposal">
+              <img src="images/landing-page-concept.png" alt="Landing Page Concept">
             </figure>
           </a>
         </p-artifact>
@@ -98,6 +98,73 @@
 
     <div class="container" v-if="showForIe == false">
       <div class="columns">
+
+        <!-- Begin Artifact -->
+        <p-artifact>
+          <a class="portfolio-link" id="shipping-estimator" @click="toggleActive('shippingModal')">
+            <figure class="figure is-2by1">
+              <img src="images/shipping-estimator.png" alt="Shipping Estimator">
+            </figure>
+          </a>
+        </p-artifact>
+        <div class="modal" v-bind:class="{ 'is-active': shippingModal }">
+          <div class="modal-background" @click="toggleActive('shippingModal');"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Context</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="columns">
+                <div class="column">
+                  <a class="artifact-redirect" href="https://docs.google.com/presentation/d/1i_fYksRIEhKYNlFmwqrbF-QI5Sj5RRHU8ZV3fxAIlvo/edit?usp=sharing" target="_blank">
+                    <figure class="image is-2by1">
+                      <img src="images/shipping-estimator.png" alt="View shipping estimator presentation">
+                    </figure>
+                  </a>
+                  <small><em>Click image to view deck w/ screenshots</em></small>
+                </div>
+                <div class="column">
+                  <p class="is-size-5 has-text-link">Problem</p>
+                  <p>Rising shipping costs had made it no longer feasible to offer free
+                    shipping on most products. <span class="text-focus">Many items 
+                    were overdue for a shipping audit</span>. However, the existing process 
+                    was slow and prone to error.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5 has-text-link">Solution</p>
+                  <p><span class="text-focus">Over 1,200 products needed to be reviewed</span>. That meant 
+                    calculating shipping rates for five representative zip codes per product, 
+                    a total of 6,000 manual lookups. Each lookup took roughly 45 seconds under ideal
+                    circumstances, meaning the entire task would require <span class="text-focus">75 hours to complete</span>.
+                    The repetitive nature of the task made it an ideal candidate for automation.</p>
+                    <br>
+                  <p>I decided that <span class="text-focus">a web app would be a flexible solution</span>
+                    since it could be deployed locally on the Company's servers. That way, other team members 
+                    could access the information without going through me. Additionally, it would reduce
+                    the amount of time required to develop the solution.</p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column">
+                  <p class="is-size-5 has-text-link">Resolution</p>
+                    <p>The end result was a simple three-screen app that accepted .csv files as input and 
+                      produced a .csv file download with the desired results. The application 
+                      <span class="text-focus">reduced 75 hours of labor to a 25-minute background task</span>.</p>
+                </div>
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <a href="https://docs.google.com/presentation/d/1i_fYksRIEhKYNlFmwqrbF-QI5Sj5RRHU8ZV3fxAIlvo/edit?usp=sharing" title="Shipping Estimator Presentation"
+              class="button is-link artifact-redirect"
+              target="_blank">View Proposal</a>
+              <button class="button" @click="toggleActive('shippingModal');">Close</button>
+            </footer>
+          </div>
+        </div>
+        <!-- End Artifact -->
+
         <!-- Begin Artifact -->
         <p-artifact type="Tableau">
           <a class="portfolio-link" id="tableau-dashboard" @click="toggleActive('tableauModal');">
@@ -120,7 +187,7 @@
                       <img src="images/tableau-dashboard.png" alt="See the dashboard in action">
                     </figure>
                   </a>
-                  <small><em>Click Image to View Dashboard</em></small>
+                  <small><em>Click image to view dashboard</em></small>
                 </div>
                 <div class="column">
                   <p class="is-size-5 has-text-link">Problem</p>
@@ -174,6 +241,10 @@
         </div>
         <!-- End Artifact  -->
 
+      </div>
+
+      <div class="columns">
+
         <!-- Begin Artifact -->
         <p-artifact>
           <a class="portfolio-link" id="landing-page-concept" @click="toggleActive('landingPageModal');">
@@ -191,12 +262,12 @@
             <section class="modal-card-body">
               <div class="columns">
                 <div class="column">
-                  <a class="artifact-redirect" href="landing-page-concept.html" target="_self">
+                  <a class="artifact-redirect" href="/landing-page-concept" target="_self">
                     <figure class="image is-2by1">
                       <img src="images/landing-page-concept.png" alt="See the full landing page design">
                     </figure>
                   </a>
-                  <small><em>Click Image to View Landing Page</em></small>
+                  <small><em>Click image to view landing page</em></small>
                 </div>
                 <div class="column">
                   <p class="is-size-5 has-text-link">Problem</p>
@@ -260,81 +331,11 @@
               </div>
             </section>
             <footer class="modal-card-foot">
-              <a href="landing-page-concept.html"
+              <a href="/landing-page-concept"
               tite="Landing Page Concept"
               target="_self"
               class="button is-link artifact-redirect">View Page</a>
               <button class="button" @click="toggleActive('landingPageModal');">Close</button>
-            </footer>
-          </div>
-        </div>
-        <!-- End Artifact -->
-      </div>
-
-      <div class="columns">
-
-        <!-- Begin Artifact -->
-        <p-artifact>
-          <a class="portfolio-link" id="schema-project" @click="toggleActive('schemaModal')">
-            <figure class="figure is-2by1">
-              <img src="images/schema-project.png" alt="Schema Project Proposal">
-            </figure>
-          </a>
-        </p-artifact>
-        <div class="modal" v-bind:class="{ 'is-active': schemaModal }">
-          <div class="modal-background" @click="toggleActive('schemaModal');"></div>
-          <div class="modal-card">
-            <header class="modal-card-head">
-              <p class="modal-card-title">Context</p>
-            </header>
-            <section class="modal-card-body">
-              <div class="columns">
-                <div class="column">
-                  <a class="artifact-redirect" href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" target="_blank">
-                    <figure class="image is-2by1">
-                      <img src="images/schema-project.png" alt="View the Schema project proposal">
-                    </figure>
-                  </a>
-                  <small><em>Click Image to View Proposal</em></small>
-                </div>
-                <div class="column">
-                  <p class="is-size-5 has-text-link">Problem</p>
-                  <p>I identified several optimizations in the course of my SEO audit.
-                    Repairing broken Schema was one of those. However, <span class="text-focus">the dev team
-                    manager needed more details</span> to verify whether the value would offset
-                    the cost.</p>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column">
-                  <p class="is-size-5 has-text-link">Solution</p>
-                  <p>The Schema subsection of the SEO audit that I performed only summarized
-                    the benefits of optimization. Because a non-trivial amount of labor could
-                    potentially be involved, <span class="text-focus">I needed to estimate the potential sales lift</span>
-                    that this task could have.</p>
-                  <br>
-                  <p>Because Schema would have a direct impact on our search results, estimating
-                    an increased click-through rate (CTR) seemed like the best method. Using search
-                    queries pulled from Google Search Console and Google Analytics, I calculated the traffic that
-                    would result from an increased CTR and applied per-session revenue to get
-                    the value of the optimization.</p>
-                </div>
-              </div>
-              <div class="columns">
-                <div class="column">
-                  <p class="is-size-5 has-text-link">Resolution</p>
-                    <p>Using the performance of a few of our strongest keywords as a base, I estimated
-                      that repairing our <span class="text-focus">Schema could lift monthly sales 10% &ndash; 30%</span>.
-                      This satisfied the request for more detail, and the included implementation steps
-                      were deemed sufficient.</p>
-                </div>
-              </div>
-            </section>
-            <footer class="modal-card-foot">
-              <a href="https://docs.google.com/presentation/d/136ZxyqQfibvIndwqDPtDqIGewL2yuoV0WqWzo2DWQKc/edit?usp=sharing" title="Schema Project Proposal"
-              class="button is-link artifact-redirect"
-              target="_blank">View Proposal</a>
-              <button class="button" @click="toggleActive('schemaModal');">Close</button>
             </footer>
           </div>
         </div>
@@ -362,7 +363,7 @@
                       <img src="images/seo-audit.png" alt="View the Schema project proposal">
                     </figure>
                   </a>
-                  <small><em>Click Image to View Audit</em></small>
+                  <small><em>Click image to view audit</em></small>
                 </div>
                 <div class="column">
                   <p class="is-size-5 has-text-link">Problem</p>
@@ -422,8 +423,7 @@
           <p class="subtitle is-6">Ace Mart Restaurant Supply</p>
           <div class="content">
             <ul>
-              <li>While performing year-over-year sales analysis, discovered that an apparent
-                5% loss was actually a 10% gain, after filtering out inconsistent data</li>
+              <li>Developed web app to turn 75 hours of labor into a 25-minute background task</li>
               <li>Managed relationship with ad agency to grow median return on ad spend by 64%</li>
               <li>Built Tableau sales trends dashboard that saved 36+ hours of manual calculations</li>
               <li>Embedded SQL query in weekly Excel dashboard to streamline data refresh</li>
