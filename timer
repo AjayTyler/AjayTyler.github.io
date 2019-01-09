@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Timer</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+  <style>
+    * {
+      font-family: Roboto !important
+    }
+    .title {
+      font-weight: 200
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-dark is-bold is-fullheight has-text-centered">
+    <div class="hero-body">
+      <div class="container" id="app">
+          <nav class="level">
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Days</p>
+                  <p class="title">{{ days }}</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Hours</p>
+                  <p class="title">{{ hours }}</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Minutes</p>
+                  <p class="title">{{ minutes }}</p>
+                </div>
+              </div>
+              <div class="level-item has-text-centered">
+                <div>
+                  <p class="heading">Seconds</p>
+                  <p class="title">{{ seconds }}</p>
+                </div>
+              </div>
+            </nav>
+      </div>
+    </div>
+  </section>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      mounted: function () {
+        this.$options.interval = setInterval(this.updateTime, 1000)
+      },
+      data: {
+        days: '',
+        hours: '',
+        minutes: '',
+        seconds: ''
+      },
+      methods: {
+        updateTime() {
+          let now = new Date()
+          let then = new Date(2019, 0, 14)
+          let distance = then.getTime() - now.getTime()
+
+          this.seconds = Math.trunc((((distance % 86400000) % 3600000) % 60000) / 1000)
+          this.minutes = Math.trunc(((distance % 86400000) % 3600000) / 60000)
+          this.hours = Math.trunc((distance % 86400000) / 3600000) 
+          this.days = Math.trunc(distance / 86400000)
+        }
+      }
+    })
+    </script>
+</body>
+</html>
