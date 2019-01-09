@@ -9,10 +9,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
   <style>
     * {
-      font-family: Roboto !important
+      font-family: Roboto !important;
     }
     .title {
-      font-weight: 200
+      font-weight: 200;
+    }
+    .heading {
+        color: #6bb36b;
     }
   </style>
 </head>
@@ -66,6 +69,13 @@
           let now = new Date()
           let then = new Date(2019, 0, 14)
           let distance = then.getTime() - now.getTime()
+
+          if (distance <= 0) {
+            this.seconds = 0
+            this.minutes = 0
+            this.hours = 0
+            this.days = 0
+          }
 
           this.seconds = Math.trunc((((distance % 86400000) % 3600000) % 60000) / 1000)
           this.minutes = Math.trunc(((distance % 86400000) % 3600000) / 60000)
